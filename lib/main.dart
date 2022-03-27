@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_custom_dialog/custom_dialog/credit_card_dialog.dart';
 import 'package:flutter_custom_dialog/platform_dialog/platform_dialog.dart';
 
 void main() {
@@ -28,15 +29,30 @@ class HomePage extends StatelessWidget {
     PlatformDialog.show(context);
   }
 
+  void _showCreditCardDialog(BuildContext context) {
+    showDialog(context: context, builder: (context) => CreditCardDialog());
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
       ),
-      body: const SizedBox(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => _showDialog(context),
-        child: const Icon(Icons.ac_unit),
+      body: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              child: const Text("Platform Dialog"),
+              onPressed: () => _showDialog(context),
+            ),
+            ElevatedButton(
+              child: const Text("Credit Dialog"),
+              onPressed: () => _showCreditCardDialog(context),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -1,5 +1,5 @@
 import 'package:flutter_custom_dialog/custom_dialog/credit_card_validation.dart';
-import 'package:test/test.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   test('Credit card number', () {
